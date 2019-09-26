@@ -3,24 +3,73 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Hello World!</title>
+  <title>Icon Maker</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" type="text/css">
   <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
   <div class="container-fluid">
     <div class="row">
+
+      <!-- Partie de gauche (visualisation de l'image) -->
       <div class="visual col-9 nopadding d-flex justify-content-center align-items-center">
-        <div class="square"></div>
+        <img id="square-icon" class="square" src='https://www.performanse.com/wp-content/uploads/2015/03/carr%C3%A9-blanc-300x300.png' />
+        <img src="./assets/images/logo-it-akademy.png" class="logo-it"></img>
       </div>
-      <img src="./assets/images/logo-it-akademy.png" class="logo-it"></img>
+
+      <!-- Partie de droite (paramètres de la génération de l'image) -->
       <div class="params col-3 nopadding ">
-        <p>test</p>
+        <div class="row d-flex justify-content-start nopadding title">
+          <p class="col-12">Ajouter une image</p>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center nopadding">
+          <i class="fa fa-file-upload fa-3x" onclick="loadFile()"></i>
+        </div>
+        <div class="row d-flex justify-content-start nopadding title">
+          <p class="col-12">Dimensions</p>
+        </div>
+        <div class="row nopadding">
+          <div class="size-picker col-12">
+            <p class="right-range">1024</p>
+            <p class="left-range">18</p>
+            <input type="range" min="18" max="1024" class="custom-range" id="input-size-range" oninput="updateSize()">
+          </div>
+        </div>
+        <div class="row d-flex justify-content-around align-items-center nopadding">
+          <div class="form-group d-flex justify-content-center align-items-center">
+            <p class="nopadding">H</p>
+            <input type="text" class="input-w-h form-control" id="image-height" value="512px" readonly>
+          </div>
+          <div class="form-group d-flex justify-content-center align-items-center">
+            <p class="nopadding">W</p>
+            <input type="text" class="input-w-h form-control" id="image-width" value="512px" readonly>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-start nopadding title">
+          <p class="col-12">Angles</p>
+        </div>
+        <div class="row d-flex justify-content-around nopadding">
+          <div class="square-sharpe d-flex justify-content-center align-items-center" id="square-shape" onclick="selectShape('square')"><i class="fas fa-square-full fa-2x"></i></div>
+          <div class="square-sharpe d-flex justify-content-center align-items-center" id="round-shape" onclick="selectShape('round')"><i class="fas fa-square fa-2x"></i></div>
+          <div class="square-sharpe d-flex justify-content-center align-items-center" id="circle-shape" onclick="selectShape('circle')"><i class="fas fa-circle fa-2x"></i></div>
+        </div>
+        <div class="row d-flex justify-content-start nopadding title">
+          <p class="col-12">Fond</p>
+        </div>
+        <div class="row d-flex justify-content-start nopadding">
+          <i class="fas fa-eye-dropper fa-1x"></i>
+          <input id="input-color" type="color" value="#ffffff" onchange="modifyBgColor()">
+        </div>
+
+
+        <div class="row d-flex justify-content-center nopadding">
+          <button class="btn btn-info validate" onclick="saveImage()">Valider</button>
+        </div>
       </div>
     </div>
 
-    <!-- <p class="nopadding">Test</p> -->
   </div>
   <!-- You can also require other files to run in this process -->
   <script src="./renderer.js"></script>

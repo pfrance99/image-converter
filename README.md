@@ -43,3 +43,8 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 ## License
 
 [CC0 1.0 (Public Domain)](LICENSE.md)
+
+## Additional
+
+Je n'ai pas eu le temps de mettre en place le redécoupage de l'image pour arrondir les bords et j'ai un comportement bizarre lors de l'ajout de la couleur à l'image.
+Outre ça, tout est censé marcher

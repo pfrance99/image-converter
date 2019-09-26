@@ -3,13 +3,15 @@ html, body, .container-fluid, .container-fluid>div:first-of-type {
   height: 100%;
   margin: 0;
   padding: 0;
+  color: #5a5a5a;
 }
 
 .nopadding {
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0;
+  margin: 0;
 }
 
+/* Visuel (Partie gauche) */
 .visual {
   background-color: #F1F1F1;
 }
@@ -17,16 +19,15 @@ html, body, .container-fluid, .container-fluid>div:first-of-type {
 .visual>.square {
   position: relative;
   width: 50%;
-  background-color: green;
+  background-color: white;
 }
 
 .visual>.square:after {
   content: "";
   display: block;
   padding-bottom: 100%;
+  background-color: white;
 }
-
-.params {}
 
 .logo-it {
   position: absolute;
@@ -34,6 +35,60 @@ html, body, .container-fluid, .container-fluid>div:first-of-type {
   left: 25px;
   width: 75px;
   height: 75px;
+}
+
+/* Paramètres (Partie droite) */
+.params {}
+
+#file-input {
+  display: none;
+}
+
+.left-range {
+  margin-bottom: 0;
+}
+
+.right-range {
+  position: absolute;
+  right: 15px;
+}
+
+.input-w-h {
+  width: 50px;
+  height: 25px;
+  margin-left: 10px;
+  width: 75px;
+  font-size: 12px;
+}
+
+.square-sharpe {
+  width: 20%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+
+.square-sharpe>i, .fa-eye-dropper, .fa-file-upload {
+  color: #626183;
+}
+
+.fa-eye-dropper {
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.square-sharpe:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.validate {
+  margin-top: 40px;
+}
+
+.title {
+  margin-top: 20px;
 }
 
 @media (max-width: 797px) {
